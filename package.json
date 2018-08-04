@@ -1,0 +1,14 @@
+{
+  "name": "xcloud",
+  "version": "1.0.0",
+  "description": "Test task for xcloud networks",
+  "main": "server/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vahan Asryan",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
