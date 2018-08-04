@@ -28,7 +28,17 @@ CREATE TABLE `bgp_states` (
   PRIMARY KEY (`id`),
   KEY `ports_bgp_states_port_id` (`port_id`),
   CONSTRAINT `ports_bgp_states_port_id` FOREIGN KEY (`port_id`) REFERENCES `ports` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of bgp_states
+-- ----------------------------
+BEGIN;
+INSERT INTO `bgp_states` VALUES (1, 3, 'Idle', '0', 24);
+INSERT INTO `bgp_states` VALUES (2, 4, 'Connected', '5000', 25);
+INSERT INTO `bgp_states` VALUES (3, 11, 'Connected', '6000', 24);
+INSERT INTO `bgp_states` VALUES (4, 12, 'Disconnected', '0', 25);
+COMMIT;
 
 -- ----------------------------
 -- Table structure for ip_assignments
@@ -77,16 +87,16 @@ CREATE TABLE `ports` (
 BEGIN;
 INSERT INTO `ports` VALUES (1, 1, NULL, 'Port 1_1', NULL);
 INSERT INTO `ports` VALUES (2, 1, NULL, 'Port 1_2', NULL);
-INSERT INTO `ports` VALUES (3, 1, 3, 'Port 1_3', NULL);
-INSERT INTO `ports` VALUES (4, 1, 1, 'Port 1_4', NULL);
+INSERT INTO `ports` VALUES (3, 1, 3, 'Port 1_3', 'SW1-S3');
+INSERT INTO `ports` VALUES (4, 1, 1, 'Port 1_4', 'SW1-S1');
 INSERT INTO `ports` VALUES (5, 1, NULL, 'Port 1_5', NULL);
 INSERT INTO `ports` VALUES (6, 1, NULL, 'Port 1_6', NULL);
 INSERT INTO `ports` VALUES (7, 1, NULL, 'Port 1_7', NULL);
 INSERT INTO `ports` VALUES (8, 1, NULL, 'Port 1_8', NULL);
 INSERT INTO `ports` VALUES (9, 1, NULL, 'Port 1_9', NULL);
 INSERT INTO `ports` VALUES (10, 1, NULL, 'Port 1_10', NULL);
-INSERT INTO `ports` VALUES (11, 2, 2, 'Port 2_1', NULL);
-INSERT INTO `ports` VALUES (12, 2, 3, 'Port 2_2', NULL);
+INSERT INTO `ports` VALUES (11, 2, 2, 'Port 2_1', 'SW2-S2');
+INSERT INTO `ports` VALUES (12, 2, 3, 'Port 2_2', 'SW2-S3');
 INSERT INTO `ports` VALUES (13, 2, NULL, 'Port 2_3', NULL);
 INSERT INTO `ports` VALUES (14, 2, NULL, 'Port 2_4', NULL);
 INSERT INTO `ports` VALUES (15, 2, NULL, 'Port 2_5', NULL);
